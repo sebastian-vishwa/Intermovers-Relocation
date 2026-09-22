@@ -1,0 +1,69 @@
+/* ============ PROCESS ============ */
+.process-track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.process-track::before {
+  content: "";
+  position: absolute;
+  top: 26px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--line);
+  z-index: 0;
+}
+
+.proc-step {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 6px;
+}
+
+.proc-dot {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--deep-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--deep-blue);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+[data-theme="dark"] .proc-dot {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+.proc-step:hover .proc-dot {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.proc-tt {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 760px) {
+  .process-track {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 30px;
+  }
+  .process-track::before {
+    display: none;
+  }
+}

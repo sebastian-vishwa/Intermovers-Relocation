@@ -1,0 +1,234 @@
+/* ============ TOKENS ============ */
+:root {
+  --deep-blue: #0A3D91;
+  --deep-blue-dark: #072a66;
+  --orange: #F68B1F;
+  --orange-dark: #d9740f;
+  --cyan: #18B7D8;
+  --white: #ffffff;
+  --gray-bg: #F3F6FA;
+  --navy-footer: #071B3D;
+  --ink: #0E1B33;
+  --ink-soft: #4A5568;
+  --line: #E3E8F0;
+  --font-display: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-util: 'Manrope', sans-serif;
+  --radius: 14px;
+  --shadow-soft: 0 10px 30px -12px rgba(10, 61, 145, 0.18);
+  --shadow-lift: 0 20px 45px -14px rgba(10, 61, 145, 0.28);
+}
+
+[data-theme="dark"] {
+  --white: #0F1830;
+  --gray-bg: #0B1327;
+  --ink: #EAF0FA;
+  --ink-soft: #9FB0CC;
+  --line: #213258;
+  --shadow-soft: 0 10px 30px -12px rgba(0, 0, 0, 0.5);
+  --shadow-lift: 0 20px 45px -14px rgba(0, 0, 0, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  line-height: 1.15;
+}
+
+.eyebrow {
+  font-family: var(--font-util);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 2px;
+  background: var(--orange);
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.container {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 96px 0;
+}
+
+.section-alt {
+  background: var(--gray-bg);
+}
+
+.btn {
+  font-family: var(--font-util);
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 14px 28px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease, background 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: #fff;
+  box-shadow: 0 12px 24px -8px rgba(246, 139, 31, 0.55);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 30px -8px rgba(246, 139, 31, 0.6);
+  background: var(--orange-dark);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-3px);
+}
+
+.btn-outline-blue {
+  border: 1.5px solid var(--deep-blue);
+  color: var(--deep-blue);
+}
+
+.btn-outline-blue:hover {
+  background: var(--deep-blue);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+[data-theme="dark"] .btn-outline-blue {
+  color: var(--cyan);
+  border-color: var(--cyan);
+}
+
+[data-theme="dark"] .btn-outline-blue:hover {
+  background: var(--cyan);
+  color: #04121f;
+}
+
+/* ============ SCROLL REVEAL ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-d1 { transition-delay: 0.08s; }
+.reveal-d2 { transition-delay: 0.16s; }
+.reveal-d3 { transition-delay: 0.24s; }
+.reveal-d4 { transition-delay: 0.32s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  * {
+    animation: none !important;
+  }
+}
+
+/* ============ ROUTE-LINE SIGNATURE ============ */
+.route-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 auto 46px;
+  width: 100%;
+  max-width: 340px;
+}
+
+.route-divider svg {
+  width: 100%;
+  height: 16px;
+  overflow: visible;
+}
+
+.route-dash {
+  stroke: var(--cyan);
+  stroke-width: 2;
+  stroke-dasharray: 6 8;
+  stroke-linecap: round;
+  animation: dashmove 3s linear infinite;
+}
+
+@keyframes dashmove {
+  to {
+    stroke-dashoffset: -56;
+  }
+}
+
+.route-node {
+  fill: var(--orange);
+}
+
+@media (max-width: 760px) {
+  .section {
+    padding: 64px 0;
+  }
+}

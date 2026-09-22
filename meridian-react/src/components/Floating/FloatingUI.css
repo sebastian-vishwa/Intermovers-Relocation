@@ -1,0 +1,100 @@
+/* ============ FLOATING UI ============ */
+.fab-stack {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 900;
+  align-items: flex-end;
+}
+
+.fab {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 30px -8px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.fab:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+.fab-wa {
+  background: #25D366;
+  color: #fff;
+}
+
+.fab-top {
+  background: var(--white);
+  color: var(--deep-blue);
+  border: 1px solid var(--line);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+[data-theme="dark"] .fab-top {
+  color: var(--cyan);
+}
+
+.fab-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.fab svg {
+  width: 22px;
+  height: 22px;
+}
+
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--navy-footer);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  z-index: 950;
+  transform: translateY(120%);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  font-size: 0.86rem;
+}
+
+.cookie-banner.show {
+  transform: translateY(0);
+}
+
+.cookie-banner a {
+  color: var(--cyan);
+  text-decoration: underline;
+}
+
+.cookie-banner button {
+  background: var(--orange);
+  color: #fff;
+  padding: 9px 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.cookie-banner button:hover {
+  background: var(--orange-dark);
+}

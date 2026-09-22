@@ -1,0 +1,128 @@
+/* ============ SERVICES ============ */
+.section-head {
+  max-width: 640px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.section-head h2 {
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  margin: 14px 0 14px;
+}
+
+.section-head p {
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.svc-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.svc-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(180deg, var(--cyan), var(--orange));
+  transition: height 0.35s ease;
+}
+
+.svc-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lift);
+  border-color: transparent;
+}
+
+.svc-card:hover::before {
+  height: 100%;
+}
+
+.svc-ic {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: var(--gray-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  color: var(--deep-blue);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.35s ease;
+}
+
+[data-theme="dark"] .svc-ic {
+  color: var(--cyan);
+}
+
+.svc-card:hover .svc-ic {
+  background: var(--deep-blue);
+  color: #fff;
+  transform: rotate(-6deg) scale(1.08);
+}
+
+.svc-ic svg {
+  width: 24px;
+  height: 24px;
+}
+
+.svc-card h4 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.svc-card p {
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-bottom: 14px;
+  min-height: 66px;
+}
+
+.svc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.svc-tags span {
+  font-family: var(--font-util);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--deep-blue);
+  background: rgba(10, 61, 145, 0.08);
+  padding: 4px 9px;
+  border-radius: 999px;
+}
+
+[data-theme="dark"] .svc-tags span {
+  color: var(--cyan);
+  background: rgba(24, 183, 216, 0.12);
+}
+
+@media (max-width: 1080px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
