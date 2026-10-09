@@ -123,6 +123,11 @@ export default function Header({ theme, toggleTheme }) {
           <li>
             <a href="#contact" className="nav-link" onClick={closeMobileMenu}>Contact</a>
           </li>
+          <li className="mobile-cta-item">
+            <a href="#contact" className="btn btn-primary w-full" onClick={closeMobileMenu}>
+              Get Free Quote
+            </a>
+          </li>
         </ul>
 
         <div className="nav-right">
@@ -152,15 +157,15 @@ export default function Header({ theme, toggleTheme }) {
           </button>
           <a
             href="#contact"
-            className="btn btn-primary"
-            style={{ padding: '11px 22px', fontSize: '0.85rem' }}
+            className="btn btn-primary nav-quote-btn"
             onClick={closeMobileMenu}
           >
             Get Free Quote
           </a>
           <button
-            className="hamburger"
+            className={`hamburger ${mobileMenuOpen ? 'open' : ''}`}
             aria-label="Menu"
+            aria-expanded={mobileMenuOpen}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <span></span>

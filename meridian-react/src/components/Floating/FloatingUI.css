@@ -98,3 +98,28 @@
 .cookie-banner button:hover {
   background: var(--orange-dark);
 }
+
+@media (max-width: 640px) {
+  .fab-stack {
+    bottom: 16px;
+    right: 16px;
+    gap: 10px;
+  }
+  .fab {
+    width: 48px;
+    height: 48px;
+  }
+  .fab svg {
+    width: 20px;
+    height: 20px;
+  }
+  .cookie-banner {
+    padding: 14px 18px;
+    font-size: 0.8rem;
+    gap: 12px;
+    text-align: center;
+  }
+  .cookie-banner button {
+    padding: 8px 18px;
+  }
+}

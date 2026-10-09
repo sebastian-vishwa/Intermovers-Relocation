@@ -243,17 +243,106 @@
 }
 
 @media (max-width: 1080px) {
+  .hero {
+    min-height: auto;
+    padding-top: 110px;
+    padding-bottom: 60px;
+  }
   .hero-grid {
     grid-template-columns: 1fr;
+    gap: 36px;
   }
   .hero-map-wrap {
-    height: 320px;
+    height: 340px;
     order: -1;
+  }
+  .scroll-cue {
+    display: none;
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 96px;
+    padding-bottom: 50px;
+  }
   .hero h1 {
-    font-size: 2.1rem;
+    font-size: clamp(1.9rem, 6.5vw, 2.4rem);
+    margin: 14px 0 16px;
+  }
+  .hero p {
+    font-size: 0.95rem;
+    margin-bottom: 26px;
+    line-height: 1.65;
+  }
+  .hero-map-wrap {
+    height: 280px;
+  }
+  .hero-card-float {
+    padding: 9px 12px;
+    gap: 8px;
+    border-radius: 10px;
+  }
+  .hero-card-float .ic {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+  }
+  .hero-card-float .ic svg {
+    width: 14px;
+    height: 14px;
+  }
+  .hero-card-float .tt {
+    font-size: 0.76rem;
+  }
+  .hero-card-float .dd {
+    font-size: 0.65rem;
+  }
+  .card-1 {
+    top: 4%;
+    left: 2%;
+  }
+  .card-2 {
+    bottom: 6%;
+    left: 6%;
+  }
+  .card-3 {
+    top: 36%;
+    right: 2%;
+  }
+  .hero-stats-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 34px;
+  }
+  .hero-stats-strip div {
+    font-size: 1.3rem;
+  }
+  .hero-stats-strip span {
+    font-size: 0.66rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-cta {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-map-wrap {
+    height: 240px;
+  }
+  .card-3 {
+    display: none;
+  }
+  .hero-stats-strip {
+    gap: 10px;
+  }
+  .hero-stats-strip div {
+    font-size: 1.15rem;
   }
 }

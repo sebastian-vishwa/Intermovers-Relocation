@@ -39,8 +39,30 @@
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 768px) {
+  .stats-band {
+    padding: 50px 0;
+  }
   .stats-band .container {
     grid-template-columns: repeat(2, 1fr);
+    gap: 26px 16px;
+  }
+  .stats-band .container div:last-child {
+    grid-column: span 2;
+  }
+  .sb-num {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 440px) {
+  .stats-band {
+    padding: 40px 0;
+  }
+  .sb-num {
+    font-size: 1.65rem;
+  }
+  .sb-lbl {
+    font-size: 0.68rem;
   }
 }

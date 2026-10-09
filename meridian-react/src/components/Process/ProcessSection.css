@@ -58,12 +58,36 @@
   font-size: 0.9rem;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1024px) {
   .process-track {
     grid-template-columns: repeat(3, 1fr);
-    row-gap: 30px;
+    row-gap: 36px;
   }
   .process-track::before {
     display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .process-track {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 28px;
+    gap: 16px;
+  }
+  .proc-dot {
+    width: 46px;
+    height: 46px;
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+  .proc-tt {
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .process-track {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
   }
 }

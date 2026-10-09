@@ -64,4 +64,34 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
+  .why-visual {
+    height: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-visual {
+    height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-visual {
+    height: 220px;
+  }
+  .why-list li {
+    padding: 14px 0;
+    gap: 12px;
+  }
+  .why-num {
+    font-size: 0.95rem;
+    width: 26px;
+  }
+  .why-tt {
+    font-size: 0.92rem;
+  }
+  .why-dd {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
 }
