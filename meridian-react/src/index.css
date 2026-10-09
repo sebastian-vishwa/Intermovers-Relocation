@@ -227,8 +227,38 @@ h1, h2, h3, h4, h5 {
   fill: var(--orange);
 }
 
-@media (max-width: 760px) {
+/* ============ GLOBAL RESPONSIVE RULES ============ */
+@media (max-width: 992px) {
   .section {
-    padding: 64px 0;
+    padding: 72px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 56px 0;
+  }
+  .container {
+    padding: 0 18px;
+  }
+  .btn {
+    padding: 12px 22px;
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 440px) {
+  .section {
+    padding: 46px 0;
+  }
+  .container {
+    padding: 0 14px;
+  }
+  .btn {
+    padding: 11px 20px;
+    font-size: 0.85rem;
+  }
+  .eyebrow {
+    font-size: 0.68rem;
   }
 }

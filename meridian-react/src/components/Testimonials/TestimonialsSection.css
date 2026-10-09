@@ -67,15 +67,37 @@
 }
 
 .test-dots button {
-  width: 9px;
-  height: 9px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: var(--line);
   transition: background 0.3s ease, transform 0.3s ease;
   padding: 0;
+  position: relative;
+}
+
+.test-dots button::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
 }
 
 .test-dots button.active {
   background: var(--orange);
-  transform: scale(1.25);
+  transform: scale(1.3);
+}
+
+@media (max-width: 640px) {
+  .test-quote {
+    font-size: 1.08rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .test-person img {
+    width: 44px;
+    height: 44px;
+  }
+  .test-person .nm {
+    font-size: 0.88rem;
+  }
 }

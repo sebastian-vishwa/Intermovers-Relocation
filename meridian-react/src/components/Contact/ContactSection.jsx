@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser'; // Added this import
 import './ContactSection.css';
 
 export default function ContactSection() {
@@ -17,10 +18,45 @@ export default function ContactSection() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  // Form submission handler
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+    console.log('Submit triggered');
+
+    // EmailJS Credentials
+    // Service ID: 'service_ihp7rsn'
+    // Template ID: 'template_ojjjadl'
+    // Public Key: 'AOtPhzMUb-I2rvdxl'
+    const serviceId = 'service_ihp7rsn';
+    const templateId = 'template_ojjjadl';
+    const publicKey = 'AOtPhzMUb-I2rvdxl';
+
+    emailjs
+      .send(
+        serviceId,
+        templateId,
+        formData, // Passes React state values to your EmailJS email template
+        publicKey
+      )
+      .then((result) => {
+        console.log('EmailJS Success:', result.status, result.text);
+        setSubmitted(true);
+
+        // Clear the form back to default
+        setFormData({
+          fullName: '',
+          email: '',
+          movingFrom: '',
+          movingTo: '',
+          service: 'International Household Relocation',
+          message: ''
+        });
+
+        setTimeout(() => setSubmitted(false), 4000);
+      })
+      .catch((error) => {
+        console.error('EmailJS Error - Failed to send email:', error);
+      });
   };
 
   return (
